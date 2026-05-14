@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#02040a] text-blue-50;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(30, 58, 138, 0.1);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.4);
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+    @apply font-bold text-blue-300 mt-4 mb-2;
+  }
+  .markdown-body p {
+    @apply mb-3 leading-relaxed;
+  }
+  .markdown-body ul {
+    @apply list-disc list-inside mb-3;
+  }
+  .markdown-body strong {
+    @apply text-blue-400 font-semibold;
+  }
+}
